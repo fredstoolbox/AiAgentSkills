@@ -1,5 +1,6 @@
 ---
 name: c++/winrt development and review guide
+# prettier-ignore
 description: general guidelines for developing Windows apps in c++ using c++/winrt. This guideline highlights the additional considerations on top of the standard C++ when writing apps using c++/winrt. This guidelines applies to development and code review.
 ---
 ## Overview
