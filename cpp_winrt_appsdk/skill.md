@@ -1,7 +1,7 @@
+---
 name: c++/winrt development and review guide
-
 description: general guidelines for developing apps in c++ using c++/winrt. This guideline highlights the additional considerations on top of the standard C++ when writing apps using c++/winrt. This guidelines applies to development and code review.
-
+---
 ## Overview
 
 C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library. C++/WinRT can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler.
