@@ -23,24 +23,24 @@ The IInspectable interface is the root interface of every runtime class in the W
 The winrt::box\_value function, which takes a scalar or array value, and returns the value boxed into an IInspectable. For unboxing an IInspectable back into a scalar or array value, there is the winrt::unbox\_value function. For unboxing an IInspectable back into a scalar value, there is also the winrt::unbox\_value\_or function. for example:
 
 ```
-Button().Content(winrt::box\\\\\\\_value(L"Clicked"));
+Button().Content(winrt::box_value(L"Clicked"));
 ```
 
 and
 
 ```
-hstring hstringValue = unbox\\\\\\\_value<hstring>(object); // Throws if object is not a boxed string.
-hstringValue = unbox\\\\\\\_value\\\\\\\_or<hstring>(object, L"Default"); // Returns L"Default" if object is not a boxed string.
-float floatValue = unbox\\\\\\\_value\\\\\\\_or<float>(object, 0.f); // Returns 0.0 if object is not a boxed float.
-std::optional<int> optionalInt = object.try\\\\\\\_as<int>(); // Returns std::nullopt if object is not a boxed int.
+hstring hstringValue = unbox_value<hstring>(object); // Throws if object is not a boxed string.
+hstringValue = unbox_value_or<hstring>(object, L"Default"); // Returns L"Default" if object is not a boxed string.
+float floatValue = unbox_value_or<float>(object, 0.f); // Returns 0.0 if object is not a boxed float.
+std::optional<int> optionalInt = object.try_as<int>(); // Returns std::nullopt if object is not a boxed int.
 ```
 
 For a boxed value with unknown type, query the boxed value for its IPropertyValue interface, and then call Type on that. for example:
 
 ```
-auto piInspectable = winrt::box\\\\\\\_value(pi);
+auto piInspectable = winrt::box_value(pi);
 auto piPropertyValue = piInspectable.as<winrt::Windows::Foundation::IPropertyValue>();
-WINRT\\\\\\\_ASSERT(piPropertyValue.Type() == winrt::Windows::Foundation::PropertyType::Single);
+WINRT_ASSERT(piPropertyValue.Type() == winrt::Windows::Foundation::PropertyType::Single);
 ```
 
 ## Consume APIs
